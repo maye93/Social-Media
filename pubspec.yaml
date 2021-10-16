@@ -29,7 +29,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  font_awesome_flutter: ^9.1.0
+  intl: "^0.17.0"
+  firebase_database: ^8.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -38,6 +40,14 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_native_splash: ^1.2.4
+
+flutter_native_splash:
+  color : "white"
+  image : assets/logo.png
+  android: true
+  ios: true
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -58,8 +68,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/logo.png
+    - assets/background.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -73,7 +84,18 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+
   # fonts:
+  #   - family: Glacial
+  #     fonts:
+  #       - asset: assets/GlacialIndifference-Regular.otf
+  #   - family: Glacial Bold
+  #     fonts:
+  #       - asset: assets/GlacialIndifference-Bold.otf
+  #   - family: Glacial Italic
+  #     fonts:
+  #       - asset: assets/GlacialIndifference-Italic.otf
+
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
