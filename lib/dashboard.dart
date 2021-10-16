@@ -39,6 +39,7 @@ class DashboardScreen extends StatelessWidget {
                       icon: const Icon(Icons.person),
                       color: Colors.white,
                       onPressed: () {
+                        print('account');
                         ScaffoldMessenger.of(context)
                         .showSnackBar(accountIcon);
                       },
@@ -76,8 +77,9 @@ class DashboardScreen extends StatelessWidget {
                   child: IconButton(
                     iconSize: 45,
                     icon: const Icon(Icons.edit),
-                    color: const Color(0xFFF0722A),
+                    color: const Color(0xFF544C92),
                     onPressed: () {
+                      print('pen');
                       Navigator.push(context,
                         MaterialPageRoute(
                           builder: (context) => ComposeScreen()
@@ -89,43 +91,20 @@ class DashboardScreen extends StatelessWidget {
               )
             ),
 
-          ////////////////////// PURPLE BOX ///////////////////////
+          ////////////////////// BLACK BOX ///////////////////////
             Positioned(
               top: 150,
               child: Container(
                 height: MediaQuery.of(context).size.height, 
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF544C92),
+                  color: Colors.black,
                   // borderRadius: BorderRadius.only(
                   //   topRight: Radius.circular(30),
                   //   topLeft: Radius.circular(30),
                   // )
                 )
               )
-            ),
-          
-          ////////////////////// PURPLE BOX ///////////////////////
-            Positioned(
-              top: 150,
-              child:Padding(
-                padding: const EdgeInsets.only(left: 5, right: 5),
-                child: ListView.separated(
-                  itemCount: Posts.length,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  separatorBuilder: (context, index) {
-                    return SizedBox(
-                      height: 10,
-                    );
-                  },
-                  itemBuilder: (context, index) {
-                    return PostBox(
-                      post: Posts[index]
-                    );
-                  }
-                )
-              ),
             ),
           
           // ///////////////////////// POSTS ////////////////////////

@@ -28,56 +28,33 @@ class ComposeScreen extends StatelessWidget {
 
               ////////////////////// CLOSE ICON ////////////////////
                 Positioned(
-                  top: 80,
-                  left: 20,
+                  top: 70,
+                  left: 10,
                   child: Material(
                     color: Colors.transparent,
                     child: Center(
-                      child: Ink(
-                        decoration: const ShapeDecoration(
-                          color: const Color(0xFFF0722A),
-                          shape: CircleBorder(),
-                        ),
-                        child: IconButton(
-                          icon: const Icon(Icons.person),
-                          color: Colors.white,
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        )
+                      child: IconButton(
+                        iconSize: 50,
+                        icon: const Icon(Icons.close),
+                        color: Colors.black,
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                       )
                     )
                   )
                 ),
 
-              ///////////////////////// LOGO /////////////////////////
+              ////////////////////// SEND ICON ////////////////////
                 Positioned(
-                  top: 55,
-                  child: Material(
-                    elevation: 1000,
-                    color: Colors.transparent,
-                    child: Container(
-                      height: 100, width: 100,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/logo.png'),
-                          fit: BoxFit.scaleDown,
-                        )
-                      )
-                    )
-                  )
-                ),
-
-              ////////////////////// PEN ICON ////////////////////
-                Positioned(
-                  top: 75,
+                  top: 70,
                   right: 10,
                   child: Material(
                     color: Colors.transparent,
                     child: Center(
                       child: IconButton(
-                        iconSize: 45,
-                        icon: const Icon(Icons.edit),
+                        iconSize: 50,
+                        icon: const Icon(Icons.send),
                         color: const Color(0xFFF0722A),
                         onPressed: () {
                           
@@ -95,37 +72,34 @@ class ComposeScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                       color: const Color(0xFF544C92),
-                      // borderRadius: BorderRadius.only(
-                      //   topRight: Radius.circular(30),
-                      //   topLeft: Radius.circular(30),
-                      // )
                     )
                   )
                 ),
 
               ////////////////////// NOTE TEXTFIELD /////////////////////
               Positioned(
-                top: 600,
-                child: SizedBox(
-                  height: 300,
-                  width: 300,
-                  child: TextFormField(
-                    controller: transferNote,
-                    textAlign: TextAlign.center,
-                    inputFormatters: <TextInputFormatter>[
-                      LengthLimitingTextInputFormatter(240)
-                    ],
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'What would you like to say?',
-                      hintStyle: TextStyle(color: Colors.grey),
-                      fillColor: Colors.white,
-                      filled: true,
-                      contentPadding:
-                        EdgeInsets.symmetric(vertical: 20),
-                    ),
+                top: 180,
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width-40,
+                    child: TextFormField(
+                      controller: transferNote,
+                      textAlign: TextAlign.center,
+                      keyboardType: TextInputType.text,
+                      maxLines: 9,
+                      inputFormatters: <TextInputFormatter>[
+                        LengthLimitingTextInputFormatter(240)
+                      ],
+                      style: TextStyle(fontSize: 20.0, color: Colors.white),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'What would you like to say?',
+                        hintStyle: TextStyle(color: Colors.grey),
+                        fillColor: Colors.transparent,
+                        filled: true,
+                      ),
+                    )
                   )
-                )
               ),
             ]
           )
