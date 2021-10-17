@@ -21,6 +21,8 @@ class LoginScreen extends StatelessWidget {
   final password = TextEditingController();
   final loginError =
     SnackBar(content: Text('ERROR: invalid username or password.'));
+  final signupError =
+    SnackBar(content: Text('ERROR: sign up page is still being fixed.'));
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +63,7 @@ class LoginScreen extends StatelessWidget {
 
                   ///////////////////////// USERNAME ///////////////////////
                   Positioned(
-                      top: 430,
+                      top: 400,
                       child: SizedBox(
                           height: 100,
                           width: 300,
@@ -69,8 +71,8 @@ class LoginScreen extends StatelessWidget {
                               controller: username,
                               textAlign: TextAlign.center,
                               decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(40)),
+                                  // border: OutlineInputBorder(
+                                  //     borderRadius: BorderRadius.circular(40)),
                                   hintText: 'Username',
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
@@ -78,12 +80,13 @@ class LoginScreen extends StatelessWidget {
                                   ),
                                   fillColor: Colors.white,
                                   filled: true,
-                                  prefixIcon: Icon(Icons.person,
-                                      color: Colors.grey))))),
+                                  // prefixIcon: Icon(Icons.person,
+                                  //     color: Colors.grey)
+                                  )))),
 
                   ///////////////////////// PASSWORD ///////////////////////
                   Positioned(
-                      top: 500,
+                      top: 450,
                       child: SizedBox(
                           height: 100,
                           width: 300,
@@ -92,8 +95,8 @@ class LoginScreen extends StatelessWidget {
                               obscureText: true,
                               textAlign: TextAlign.center,
                               decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(40)),
+                                  // border: OutlineInputBorder(
+                                  //     borderRadius: BorderRadius.circular(40)),
                                   hintText: 'Password',
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
@@ -101,12 +104,13 @@ class LoginScreen extends StatelessWidget {
                                   ),
                                   fillColor: Colors.white,
                                   filled: true,
-                                  prefixIcon: Icon(Icons.security,
-                                      color: Colors.grey))))),
+                                  // prefixIcon: Icon(Icons.security,
+                                  //     color: Colors.grey)
+                                    )))),
 
                   ///////////////////////// LOGIN BUTTON //////////////////////
                   Positioned(
-                      top: 590,
+                      top: 550,
                       child: SizedBox(
                           height: 50,
                           width: 150,
@@ -137,7 +141,33 @@ class LoginScreen extends StatelessWidget {
                                       EdgeInsets.all(15)),
                                   elevation: MaterialStateProperty.all(0),
                                   backgroundColor: MaterialStateProperty.all(
-                                      const Color(0xFFE58B8E)))))),
+                                      const Color(0xFFEE712B)))))),
+
+                  ///////////////////////// SIGN UP BUTTON //////////////////////
+                  Positioned(
+                      top: 620,
+                      child: SizedBox(
+                          height: 50,
+                          width: 150,
+                          child: ElevatedButton(
+                              child: Text('Sign Up',
+                                  style: TextStyle(
+                                    fontFamily: 'Glacial',
+                                  )),
+                              onPressed: () {
+                                ScaffoldMessenger.of(context)
+                                  .showSnackBar(signupError);
+                              },
+                              style: ButtonStyle(
+                                  shape: MaterialStateProperty.all(
+                                      RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10))),
+                                  padding: MaterialStateProperty.all(
+                                      EdgeInsets.all(15)),
+                                  elevation: MaterialStateProperty.all(0),
+                                  backgroundColor: MaterialStateProperty.all(
+                                      const Color(0xFF544C93)))))),
                 ]))));
   }
 }
