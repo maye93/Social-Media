@@ -1,4 +1,4 @@
-class AdminAccount{
+class AdminAccount {
   String _privAcc = "admin";
   String _privPass = "admin";
 
@@ -8,5 +8,9 @@ class AdminAccount{
 
   password() {
     return _privPass;
+  }
+
+  image() {
+    return "assets/jimght.jpg";
   }
 }
