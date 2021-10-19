@@ -36,6 +36,7 @@ class Dashboard extends State<DashboardScreen> {
   final postUpdate = SnackBar(content: Text('UPDATE: post has been successfully published.'));
 
   final List<PostTiles> postsList = <PostTiles>[
+    PostTiles("assets/dwight.jpeg", "Dwight", "When someone smiles at me, all I see is a chimpanzee begging for its life."),
     PostTiles("assets/pam.jpeg", "Pam", "HAHAHAHHAHAHAHAH"),
     PostTiles("assets/stanley.jpeg", "Stanley", "BOY HAVE YOU LOST YOUR MIND?!"),
     PostTiles("assets/meredith.jpeg", "Meredith", "*drinks alcohol*"),
