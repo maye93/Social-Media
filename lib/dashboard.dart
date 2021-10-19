@@ -43,7 +43,7 @@ class Dashboard extends State<DashboardScreen> {
     PostTiles("assets/kevin.jpeg", "Kevin", "why waste time say lot word"),
     PostTiles("assets/pig.jpg", "Pig", "hmmm"),
     PostTiles("assets/darth.jpg", "Darth Dwight", "JOIN THE SITH"),
-    PostTiles("assets/jim.jpg", "Jim", "Hi I'm Jim..."),
+    PostTiles("assets/jim.jpg", "Jim", "Identity theft is not a joke, Jim! Millions of families suffer every year!"),
     PostTiles("assets/joker.jpg", "Joker", "Why so serious?"),
     PostTiles("assets/serial.jpg", "Serial Killer", "............"),
     PostTiles("assets/pumpkin.jpg", "PumpkinHead","The pumpkin should rot off my head in a month or two, right?"),
